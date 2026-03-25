@@ -1,8 +1,22 @@
-/*Exercício 1 – Classe e objeto
-Crie uma classe Carro com atributos: marca (String), modelo (String) e ano (int). Na Main:
-a) Crie dois objetos Carro e atribua valores diretamente nos atributos.
-b) Imprima os dados de cada carro no console.*/
+/*Exercício 2 – Método void vs método com retorno
+Na classe Carro:
+a) Crie um método void exibir() que imprime marca, modelo e ano formatados.
+b) Crie um método int idadeDoCarro() que retorna 2026 - ano.
+c) Na Main, chame os dois métodos. Comente no código: qual devolve valor? Qual só
+executa uma ação?*/
 public class Carro {
+
+    public void exibir(){ //Método que imprime marca, modelo e ano formatados.
+        System.out.format("Marca: %s | Modelo: %s | Ano: %d", this.marca, this.modelo, this.ano);
+        System.out.println();
+    }
+
+    public void idadeDoCarro() {
+        int idade = 2026 - this.ano;
+        System.out.println("A idade desse carro é: " + idade + " anos.");
+        System.out.println();
+    }
+
     public String getMarca() {
         return marca;
     }
@@ -33,11 +47,13 @@ public class Carro {
 
     private int ano;
 
-    public Carro () {
+
+    public Carro () { //Construtor padrão
         String marca = "";
         String modelo = "";
         int ano = 0;
 
     }
+
 
 }
