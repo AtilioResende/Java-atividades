@@ -1,9 +1,8 @@
-/*Exercício 4 – Encapsulamento
-a) Torne todos os atributos de Carro private.
-b) Crie getters e setters para cada atributo.
-c) No setter de ano, adicione validação: se o valor for menor que 1886 ou maior que 2026,
-não altere o atributo e imprima uma mensagem de erro.
-d) Ajuste toda a Main para usar get/set em vez de acesso direto.*/
+/*Exercício 5 – Construtor parametrizado
+a) Crie um construtor em Carro que receba marca, modelo e ano como parâmetros.
+b) Ajuste a Main para criar objetos usando o construtor.
+c) Comente no código: qual a vantagem de usar construtor em vez de chamar setters um
+por um?*/
 public class Carro {
 
     public void exibir(){ //Método que imprime marca, modelo e ano formatados.
@@ -65,7 +64,8 @@ public class Carro {
 
     }
 
-    public Carro (String marca, String modelo, int ano) {
+    public Carro (String marca, String modelo, int ano) {/*Resposta ao
+                                                        ex. 5a.*/
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;

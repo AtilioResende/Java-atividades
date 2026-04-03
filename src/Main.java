@@ -1,9 +1,8 @@
-/*Exercício 4 – Encapsulamento
-a) Torne todos os atributos de Carro private.
-b) Crie getters e setters para cada atributo.
-c) No setter de ano, adicione validação: se o valor for menor que 1886 ou maior que 2026,
-não altere o atributo e imprima uma mensagem de erro.
-d) Ajuste toda a Main para usar get/set em vez de acesso direto.*/
+/*Exercício 5 – Construtor parametrizado
+a) Crie um construtor em Carro que receba marca, modelo e ano como parâmetros.
+b) Ajuste a Main para criar objetos usando o construtor.
+c) Comente no código: qual a vantagem de usar construtor em vez de chamar setters um
+por um?*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +24,26 @@ public class Main {
         c2.setAno(2023);
         c2.getIdadeDoCarro();
         listaDeCarros.add(c2);
+
+        /*Relaciona-se com o construtor parametrizado. Aqui os atributos são passados de forma
+        parametrizada.*/
+        Carro c3 = new Carro("Fiat", "Uno", 2013);
+        listaDeCarros.add(c3);
+        /*Resposta 5c: VANTAGENS do construtor parametrizado:
+        -Atomicidade: O objeto já nasce em um estado válido e completo.
+        Usando setters um por um, o objeto fica em um estado "incompleto
+        ou inválido(ex.: um carro sem marca ou ano) entre a criação e a
+        chamada do último setter.
+
+        -Redução de código: O código fica menos verboso. Nota-se a
+        substituição de 4 ou 5 linhas por apenas 1. Isso torna a Main
+        muito mais limpa e fácil de ler.
+
+        -Obrigatoriedade: Se você definir apenas o construtor com
+        parâmetros, você obriga quem for usar sua classe a fornecer os
+        dados essenciais. Com setters, alguém pode esquecer de definir
+        o ano, causando erros nos cálculos de idade depois.*/
+
 
         listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
         listaDeCarros.add(new Carro("Ford", "Ranger", 2022));
