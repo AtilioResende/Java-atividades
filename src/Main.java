@@ -1,11 +1,25 @@
-/*Exercício 2 – Método void vs método com retorno
-Na classe Carro:
-a) Crie um método void exibir() que imprime marca, modelo e ano formatados.
-b) Crie um método int idadeDoCarro() que retorna 2026 - ano.
-c) Na Main, chame os dois métodos. Comente no código: qual devolve valor? Qual só
-executa uma ação?*/
+/*Exercício 3 – ArrayList e for-each
+Na Main, crie um ArrayList<Carro>. Adicione 3 carros na lista. Percorra com for-each
+chamando exibir() em cada um.*/
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+
+        ArrayList<Carro> listaDeCarros = new ArrayList<>();
+
+        listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
+        listaDeCarros.add(new Carro("Ford", "Ranger", 2022));
+        listaDeCarros.add(new Carro("Toyota", "Corolla", 2025));
+
+            System.out.println("---------LISTA DE CARROS---------");
+            for (Carro carro : listaDeCarros) {
+                carro.exibir();
+        }
+            /*Percebi que usar uma listaDeCarros e um método(carro.exibir()) é bem mais
+            sucinto de escrever do que deixar como estava:
+
         Carro c1 = new Carro();
         c1.setMarca("Honda");
         c1.setModelo("City");
@@ -20,6 +34,8 @@ public class Main {
         c2.setAno(2027);
         System.out.println("Este é o modelo " + c2.getModelo() + " da marca " + c2.getMarca() + " de ano " + c2.getAno());
         c2.exibir();
-        c2.idadeDoCarro();
+        c2.idadeDoCarro();*/
+
+
     }
 }

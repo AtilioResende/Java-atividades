@@ -1,20 +1,16 @@
-/*Exercício 2 – Método void vs método com retorno
-Na classe Carro:
-a) Crie um método void exibir() que imprime marca, modelo e ano formatados.
-b) Crie um método int idadeDoCarro() que retorna 2026 - ano.
-c) Na Main, chame os dois métodos. Comente no código: qual devolve valor? Qual só
-executa uma ação?*/
+/*Exercício 3 – ArrayList e for-each
+Na Main, crie um ArrayList<Carro>. Adicione 3 carros na lista. Percorra com for-each
+chamando exibir() em cada um.*/
 public class Carro {
 
     public void exibir(){ //Método que imprime marca, modelo e ano formatados.
-        System.out.format("Marca: %s | Modelo: %s | Ano: %d", this.marca, this.modelo, this.ano);
+        System.out.format("Marca: %s | Modelo: %s | Ano: %d | Idade: %d", this.marca, this.modelo, this.ano, this.getIdadeDoCarro());
         System.out.println();
     }
 
-    public void idadeDoCarro() {
-        int idade = 2026 - this.ano;
-        System.out.println("A idade desse carro é: " + idade + " anos.");
-        System.out.println();
+/*Tive de gerar um get para retornar a idade do Carro. Apaguei o método public void idadeDoCarro()*/
+    public int getIdadeDoCarro() {
+        return 2026 - this.ano;
     }
 
     public String getMarca() {
@@ -54,6 +50,15 @@ public class Carro {
         int ano = 0;
 
     }
+
+    public Carro (String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+/* listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
+        listaDeCarros.add(new Carro("Ford", "Ranger", 2022));
+        listaDeCarros.add(new Carro("Toyota", "Corolla", 2025));*/
 
 
 }
