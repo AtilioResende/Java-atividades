@@ -1,6 +1,9 @@
-/*Exercício 3 – ArrayList e for-each
-Na Main, crie um ArrayList<Carro>. Adicione 3 carros na lista. Percorra com for-each
-chamando exibir() em cada um.*/
+/*Exercício 4 – Encapsulamento
+a) Torne todos os atributos de Carro private.
+b) Crie getters e setters para cada atributo.
+c) No setter de ano, adicione validação: se o valor for menor que 1886 ou maior que 2026,
+não altere o atributo e imprima uma mensagem de erro.
+d) Ajuste toda a Main para usar get/set em vez de acesso direto.*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +11,20 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Carro> listaDeCarros = new ArrayList<>();
+
+        Carro c1 = new Carro();
+        c1.setMarca("Honda");
+        c1.setModelo("City");
+        c1.setAno(2025);
+        c1.getIdadeDoCarro();
+        listaDeCarros.add(c1);
+
+        Carro c2 = new Carro();
+        c2.setMarca("Citroën");
+        c2.setModelo("Basalt");
+        c2.setAno(2023);
+        c2.getIdadeDoCarro();
+        listaDeCarros.add(c2);
 
         listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
         listaDeCarros.add(new Carro("Ford", "Ranger", 2022));

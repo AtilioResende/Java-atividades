@@ -1,6 +1,9 @@
-/*Exercício 3 – ArrayList e for-each
-Na Main, crie um ArrayList<Carro>. Adicione 3 carros na lista. Percorra com for-each
-chamando exibir() em cada um.*/
+/*Exercício 4 – Encapsulamento
+a) Torne todos os atributos de Carro private.
+b) Crie getters e setters para cada atributo.
+c) No setter de ano, adicione validação: se o valor for menor que 1886 ou maior que 2026,
+não altere o atributo e imprima uma mensagem de erro.
+d) Ajuste toda a Main para usar get/set em vez de acesso direto.*/
 public class Carro {
 
     public void exibir(){ //Método que imprime marca, modelo e ano formatados.
@@ -8,6 +11,11 @@ public class Carro {
         System.out.println();
     }
 
+    /*public void setIdadeDoCarro(int ano) {
+        int idade = 2026 - this.ano;
+        System.out.println("A idade desse carro é: " + idade + " anos.");
+        System.out.println();
+    }*/
 /*Tive de gerar um get para retornar a idade do Carro. Apaguei o método public void idadeDoCarro()*/
     public int getIdadeDoCarro() {
         return 2026 - this.ano;
@@ -38,16 +46,22 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-        this.ano = ano;
+        if (ano < 2026 && ano > 1886) { /*Método modificado conforme
+                                                  o exercício 4c.*/
+            this.ano = ano;
+        }else{
+            System.out.println("ERRRO!");
+        }
+
     }
 
     private int ano;
 
 
     public Carro () { //Construtor padrão
-        String marca = "";
+        /*String marca = "";
         String modelo = "";
-        int ano = 0;
+        int ano = 0;*/
 
     }
 
