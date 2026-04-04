@@ -1,8 +1,8 @@
-/*Exercício 5 – Construtor parametrizado
-a) Crie um construtor em Carro que receba marca, modelo e ano como parâmetros.
-b) Ajuste a Main para criar objetos usando o construtor.
-c) Comente no código: qual a vantagem de usar construtor em vez de chamar setters um
-por um?*/
+/*Exercício 6 – Sobrecarga de construtor
+a) Mantenha o construtor do exercício 5.
+b) Crie um segundo construtor sem parâmetros que define marca = "Desconhecido",
+modelo = "Desconhecido", ano = 0.
+c) Na Main, crie um carro de cada forma e imprima. Comente: o que muda entre os dois?*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +43,15 @@ public class Main {
         parâmetros, você obriga quem for usar sua classe a fornecer os
         dados essenciais. Com setters, alguém pode esquecer de definir
         o ano, causando erros nos cálculos de idade depois.*/
+
+        //Construtor sem parâmetros, conforme pedido no exercício 6c.
+        Carro c4 = new Carro();
+        listaDeCarros.add(c4);
+        /*Resposta ex. 6c: No construtor parametrizado (ex: c3), os dados vêm de fora
+        (argumentos da Main). No construtor sem parâmetros (ex: c4),
+        os dados são definidos internamente pela própria classe (valores "default").
+        Isso permite criar objetos mesmo quando não temos informações imediatas,
+        garantindo que o objeto não tenha valores nulos indesejados.*/
 
 
         listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));

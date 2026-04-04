@@ -1,8 +1,8 @@
-/*Exercício 5 – Construtor parametrizado
-a) Crie um construtor em Carro que receba marca, modelo e ano como parâmetros.
-b) Ajuste a Main para criar objetos usando o construtor.
-c) Comente no código: qual a vantagem de usar construtor em vez de chamar setters um
-por um?*/
+/*Exercício 6 – Sobrecarga de construtor
+a) Mantenha o construtor do exercício 5.
+b) Crie um segundo construtor sem parâmetros que define marca = "Desconhecido",
+modelo = "Desconhecido", ano = 0.
+c) Na Main, crie um carro de cada forma e imprima. Comente: o que muda entre os dois?*/
 public class Carro {
 
     public void exibir(){ //Método que imprime marca, modelo e ano formatados.
@@ -57,18 +57,24 @@ public class Carro {
     private int ano;
 
 
-    public Carro () { //Construtor padrão
+   /* public Carro () { //Construtor padrão
         /*String marca = "";
         String modelo = "";
         int ano = 0;*/
 
-    }
 
     public Carro (String marca, String modelo, int ano) {/*Resposta ao
                                                         ex. 5a.*/
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+    }
+
+    public Carro () { //Este é o segundo construtor, conforme ex. 6b.
+
+        this.marca = "Desconhecido";
+        this.modelo = "Desconhecido";
+        this.ano = 0;
     }
 /* listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
         listaDeCarros.add(new Carro("Ford", "Ranger", 2022));
