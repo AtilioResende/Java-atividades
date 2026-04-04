@@ -1,10 +1,9 @@
-/*Exercício 7 – static (atributo de classe)
-a) Adicione static int totalCarros = 0 na classe Carro.
-b) Incremente esse contador dentro dos dois construtores.
-c) Na Main, crie 5 carros e imprima Carro.totalCarros.
-d) Comente no código: por que acessamos com Carro.totalCarros (nome da classe) e não
-com meuCarro.totalCarros (nome do objeto)? Qual a diferença entre atributo static e
-atributo de instância?*/
+/*Exercício 8 – static (método de classe)
+a) Crie um método static void imprimirTotal() em Carro que imprime o totalCarros.
+b) Dentro desse método static, tente acessar o atributo modelo (de instância). O que
+acontece?
+c) Comente explicando: por que um método static não consegue acessar um atributo de
+instância?*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,10 +63,11 @@ public class Main {
             for (Carro carro : listaDeCarros) {
                 carro.exibir();
         }
-
+        Carro.imprimirTotal();
         System.out.println("Total de carros: " + Carro.totalCarros);//Resposta 7c
             /*Percebi que usar uma listaDeCarros e um método(carro.exibir()) é bem mais
             sucinto de escrever do que deixar como estava:
+
 
         Carro c1 = new Carro();
         c1.setMarca("Honda");

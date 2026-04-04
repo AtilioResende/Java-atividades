@@ -1,11 +1,19 @@
-/*Exercício 7 – static (atributo de classe)
-a) Adicione static int totalCarros = 0 na classe Carro.
-b) Incremente esse contador dentro dos dois construtores.
-c) Na Main, crie 5 carros e imprima Carro.totalCarros.
-d) Comente no código: por que acessamos com Carro.totalCarros (nome da classe) e não
-com meuCarro.totalCarros (nome do objeto)? Qual a diferença entre atributo static e
-atributo de instância?*/
+/*Exercício 8 – static (método de classe)
+a) Crie um método static void imprimirTotal() em Carro que imprime o totalCarros.
+b) Dentro desse método static, tente acessar o atributo modelo (de instância). O que
+acontece?
+Resposta: dá erro.
+c) Comente explicando: por que um método static não consegue acessar um atributo de
+instância?
+Resposta: Por que o que está dentro de um método static pode ser acessado por toda par
+te do código, pois static pertence à classe. Já getModelo() pertence à uma instância,
+um objeto, por isso só pode ser eceito no stastic se for instanciado. Ex.:
+c1.getModelo().*/
 public class Carro {
+
+    static void imprimirTotal() {
+        System.out.println("Total de carros:" + Carro.totalCarros);
+    }
 
     static int totalCarros = 0;/*contador.
     Resposta ex. 7d.
