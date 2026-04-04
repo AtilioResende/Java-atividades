@@ -1,17 +1,20 @@
-/*Exercício 11 – Referência vs valor (primitivo)
+/*Exercício 12 – Referência vs valor (objeto)
 Execute o código abaixo:
-int a = 10;
-int b = a;
-b = 99;
-System.out.println("a = " + a);
-System.out.println("b = " + b);
-a) Qual o valor de a e de b após a execução?
-Resposta: a = 10 e b = 99;
-b) Comente explicando: alterar b mudou a? Por quê?
-Não. Porque em Java, int é do tipo Primitivo. Por isso, diferentemente de
-um Objeto, na linha "int b = a" o Java não liga 'b' a 'a', mas faz com
-que b RECEBA o valor de a, que é 10. Já na próxima linha, o valor de
-b é alterado para 99.
+Carro c1 = new Carro("Fiat", "Uno", 2020);
+Carro c2 = c1;
+c2.setModelo("Palio");
+System.out.println(c1.getModelo());
+System.out.println(c2.getModelo());
+a) Qual o modelo de c1 e de c2?
+Uno e Palio, respectivamente.
+b) Comente explicando: por que alterar c2(c9) mudou c1(c8)? O que c1 e c2 compartilham?
+Porque c9 RECEBEU os dados de c8. Todos os atributos.
+c) Comente explicando: qual a diferença entre o comportamento do exercício 11 (int) e
+deste exercício (Carro)? Use os termos stack e heap na explicação.
+Resposta: No primeiro código, a e b são valores distintos, do tipo primitivo,
+armazenados na stack. Já no segundo, c8 e c9 são apenas dois nomes diferentes para o
+nesmíssimo objeto. É por isso que, ao alterar o modelo via c9, o c8 também sofre
+a alteração: eles estão olhando para a mesma vaga no estacionamento da memória(heap).
 */
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,14 @@ public class Main {
          */
 
         ArrayList<Carro> listaDeCarros = new ArrayList<>();
+
+        Carro c8 = new Carro("Fiat", "Uno", 2020);
+        Carro c9 = c8;
+        c9.setModelo("Palio");
+        System.out.println(c8.getModelo());
+        listaDeCarros.add(c8);
+        System.out.println(c9.getModelo());
+        listaDeCarros.add(c9);
 
         Carro c1 = new Carro();
         c1.setMarca("Honda");
