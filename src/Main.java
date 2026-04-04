@@ -1,14 +1,30 @@
-/*Exercício 9 – final
-a) Crie uma constante static final int ANO_PRIMEIRO_CARRO = 1886 na classe Carro.
-b) Use essa constante na validação do setter de ano (substitua o 1886 que você escreveu no
-exercício 4c).
-c) Na Main, tente alterar o valor de Carro.ANO_PRIMEIRO_CARRO = 1900. O que
-acontece? Comente explicando o que final faz em uma variável.*/
+/*Exercício 10 – Escopo de variável
+Escreva o código abaixo na Main e tente compilar:
+public static void main(String[] args) {
+if (true) {
+int x = 10;
+}
+System.out.println(x);
+}
+a) O que acontece? Compila ou dá erro?
+Resposta:Dá erro
+ b) Corrija o código para funcionar.
+c) Comente explicando: o que é escopo? Por que a variável x não existia fora do if?
+Resposta: Escopo é uma região do código em que uma variável é 'viva' e acessível.
+A variável x não existia fora do if porque as chaves limitaram o seu ciclo de vida.
+Por isso, para que ela exista e seja chamada pelo sout, deve-se declarar int x=0
+fora do if também.*/
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        int x = 0;
+        if (true) {
+            x = 10;
+        }
+        System.out.println(x);
 
         /*Carro.ANO_PRIMEIRO_CARRO = 1900;
         O método static final torna o valor atribuído a ele uma constante, impedindo que
@@ -89,7 +105,6 @@ public class Main {
         System.out.println("Este é o modelo " + c2.getModelo() + " da marca " + c2.getMarca() + " de ano " + c2.getAno());
         c2.exibir();
         c2.idadeDoCarro();*/
-
 
     }
 }

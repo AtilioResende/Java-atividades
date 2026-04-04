@@ -1,9 +1,14 @@
-/*Exercício 9 – final
-a) Crie uma constante static final int ANO_PRIMEIRO_CARRO = 1886 na classe Carro.
-b) Use essa constante na validação do setter de ano (substitua o 1886 que você escreveu no
-exercício 4c).
-c) Na Main, tente alterar o valor de Carro.ANO_PRIMEIRO_CARRO = 1900. O que
-acontece? Comente explicando o que final faz em uma variável.*/
+/*Exercício 10 – Escopo de variável
+Escreva o código abaixo na Main e tente compilar:
+public static void main(String[] args) {
+if (true) {
+int x = 10;
+}
+System.out.println(x);
+}
+a) O que acontece? Compila ou dá erro?
+b) Corrija o código para funcionar.
+c) Comente explicando: o que é escopo? Por que a variável x não existia fora do if?*/
 public class Carro {
 
     public static final int ANO_PRIMEIRO_CARRO = 1886;
