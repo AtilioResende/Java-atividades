@@ -1,14 +1,12 @@
-/*Exercício 10 – Escopo de variável
-Escreva o código abaixo na Main e tente compilar:
-public static void main(String[] args) {
-if (true) {
-int x = 10;
-}
-System.out.println(x);
-}
-a) O que acontece? Compila ou dá erro?
-b) Corrija o código para funcionar.
-c) Comente explicando: o que é escopo? Por que a variável x não existia fora do if?*/
+/*Exercício 11 – Referência vs valor (primitivo)
+Execute o código abaixo:
+int a = 10;
+int b = a;
+b = 99;
+System.out.println("a = " + a);
+System.out.println("b = " + b);
+a) Qual o valor de a e de b após a execução?
+b) Comente explicando: alterar b mudou a? Por quê?*/
 public class Carro {
 
     public static final int ANO_PRIMEIRO_CARRO = 1886;

@@ -1,19 +1,18 @@
-/*Exercício 10 – Escopo de variável
-Escreva o código abaixo na Main e tente compilar:
-public static void main(String[] args) {
-if (true) {
-int x = 10;
-}
-System.out.println(x);
-}
-a) O que acontece? Compila ou dá erro?
-Resposta:Dá erro
- b) Corrija o código para funcionar.
-c) Comente explicando: o que é escopo? Por que a variável x não existia fora do if?
-Resposta: Escopo é uma região do código em que uma variável é 'viva' e acessível.
-A variável x não existia fora do if porque as chaves limitaram o seu ciclo de vida.
-Por isso, para que ela exista e seja chamada pelo sout, deve-se declarar int x=0
-fora do if também.*/
+/*Exercício 11 – Referência vs valor (primitivo)
+Execute o código abaixo:
+int a = 10;
+int b = a;
+b = 99;
+System.out.println("a = " + a);
+System.out.println("b = " + b);
+a) Qual o valor de a e de b após a execução?
+Resposta: a = 10 e b = 99;
+b) Comente explicando: alterar b mudou a? Por quê?
+Não. Porque em Java, int é do tipo Primitivo. Por isso, diferentemente de
+um Objeto, na linha "int b = a" o Java não liga 'b' a 'a', mas faz com
+que b RECEBA o valor de a, que é 10. Já na próxima linha, o valor de
+b é alterado para 99.
+*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +25,11 @@ public class Main {
         }
         System.out.println(x);
 
+        int a = 10;
+        int b = a;
+        b = 99;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
         /*Carro.ANO_PRIMEIRO_CARRO = 1900;
         O método static final torna o valor atribuído a ele uma constante, impedindo que
         seja mudado posteriormente, como neste caso.
