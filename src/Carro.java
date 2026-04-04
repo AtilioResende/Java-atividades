@@ -1,9 +1,18 @@
-/*Exercício 6 – Sobrecarga de construtor
-a) Mantenha o construtor do exercício 5.
-b) Crie um segundo construtor sem parâmetros que define marca = "Desconhecido",
-modelo = "Desconhecido", ano = 0.
-c) Na Main, crie um carro de cada forma e imprima. Comente: o que muda entre os dois?*/
+/*Exercício 7 – static (atributo de classe)
+a) Adicione static int totalCarros = 0 na classe Carro.
+b) Incremente esse contador dentro dos dois construtores.
+c) Na Main, crie 5 carros e imprima Carro.totalCarros.
+d) Comente no código: por que acessamos com Carro.totalCarros (nome da classe) e não
+com meuCarro.totalCarros (nome do objeto)? Qual a diferença entre atributo static e
+atributo de instância?*/
 public class Carro {
+
+    static int totalCarros = 0;/*contador.
+    Resposta ex. 7d.
+    Este é um atributo de classe(estático). Perceba que ele pertence apenas à classe
+    Carro. Ele é um contador único que observa todos os carros de fora, diferentemente
+    dos atributos de instância, como marca, modelo e ano. Por isso, ele deve ser aces
+    sado por meio do nome da Classe: Carro.totalCarros.*/
 
     public void exibir(){ //Método que imprime marca, modelo e ano formatados.
         System.out.format("Marca: %s | Modelo: %s | Ano: %d | Idade: %d", this.marca, this.modelo, this.ano, this.getIdadeDoCarro());
@@ -68,6 +77,8 @@ public class Carro {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+
+        totalCarros++; //Incrementa o contador
     }
 
     public Carro () { //Este é o segundo construtor, conforme ex. 6b.
@@ -75,6 +86,8 @@ public class Carro {
         this.marca = "Desconhecido";
         this.modelo = "Desconhecido";
         this.ano = 0;
+
+        totalCarros++; //Incrementa o contador
     }
 /* listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
         listaDeCarros.add(new Carro("Ford", "Ranger", 2022));

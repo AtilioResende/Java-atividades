@@ -1,8 +1,10 @@
-/*Exercício 6 – Sobrecarga de construtor
-a) Mantenha o construtor do exercício 5.
-b) Crie um segundo construtor sem parâmetros que define marca = "Desconhecido",
-modelo = "Desconhecido", ano = 0.
-c) Na Main, crie um carro de cada forma e imprima. Comente: o que muda entre os dois?*/
+/*Exercício 7 – static (atributo de classe)
+a) Adicione static int totalCarros = 0 na classe Carro.
+b) Incremente esse contador dentro dos dois construtores.
+c) Na Main, crie 5 carros e imprima Carro.totalCarros.
+d) Comente no código: por que acessamos com Carro.totalCarros (nome da classe) e não
+com meuCarro.totalCarros (nome do objeto)? Qual a diferença entre atributo static e
+atributo de instância?*/
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +64,8 @@ public class Main {
             for (Carro carro : listaDeCarros) {
                 carro.exibir();
         }
+
+        System.out.println("Total de carros: " + Carro.totalCarros);//Resposta 7c
             /*Percebi que usar uma listaDeCarros e um método(carro.exibir()) é bem mais
             sucinto de escrever do que deixar como estava:
 
