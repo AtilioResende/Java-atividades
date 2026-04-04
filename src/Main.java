@@ -1,14 +1,19 @@
-/*Exercício 8 – static (método de classe)
-a) Crie um método static void imprimirTotal() em Carro que imprime o totalCarros.
-b) Dentro desse método static, tente acessar o atributo modelo (de instância). O que
-acontece?
-c) Comente explicando: por que um método static não consegue acessar um atributo de
-instância?*/
+/*Exercício 9 – final
+a) Crie uma constante static final int ANO_PRIMEIRO_CARRO = 1886 na classe Carro.
+b) Use essa constante na validação do setter de ano (substitua o 1886 que você escreveu no
+exercício 4c).
+c) Na Main, tente alterar o valor de Carro.ANO_PRIMEIRO_CARRO = 1900. O que
+acontece? Comente explicando o que final faz em uma variável.*/
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+        /*Carro.ANO_PRIMEIRO_CARRO = 1900;
+        O método static final torna o valor atribuído a ele uma constante, impedindo que
+        seja mudado posteriormente, como neste caso.
+         */
 
         ArrayList<Carro> listaDeCarros = new ArrayList<>();
 

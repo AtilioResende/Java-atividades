@@ -1,16 +1,12 @@
-/*Exercício 8 – static (método de classe)
-a) Crie um método static void imprimirTotal() em Carro que imprime o totalCarros.
-b) Dentro desse método static, tente acessar o atributo modelo (de instância). O que
-acontece?
-Resposta: dá erro.
-c) Comente explicando: por que um método static não consegue acessar um atributo de
-instância?
-Resposta: Por que o que está dentro de um método static pode ser acessado por toda par
-te do código, pois static pertence à classe. Já getModelo() pertence à uma instância,
-um objeto, por isso só pode ser eceito no stastic se for instanciado. Ex.:
-c1.getModelo().*/
+/*Exercício 9 – final
+a) Crie uma constante static final int ANO_PRIMEIRO_CARRO = 1886 na classe Carro.
+b) Use essa constante na validação do setter de ano (substitua o 1886 que você escreveu no
+exercício 4c).
+c) Na Main, tente alterar o valor de Carro.ANO_PRIMEIRO_CARRO = 1900. O que
+acontece? Comente explicando o que final faz em uma variável.*/
 public class Carro {
 
+    public static final int ANO_PRIMEIRO_CARRO = 1886;
     static void imprimirTotal() {
         System.out.println("Total de carros:" + Carro.totalCarros);
     }
@@ -62,7 +58,7 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-        if (ano < 2026 && ano > 1886) { /*Método modificado conforme
+        if (ano < 2026 && ano > ANO_PRIMEIRO_CARRO) { /*Método modificado conforme
                                                   o exercício 4c.*/
             this.ano = ano;
         }else{
