@@ -1,20 +1,18 @@
-/*Exercício 12 – Referência vs valor (objeto)
-Execute o código abaixo:
-Carro c1 = new Carro("Fiat", "Uno", 2020);
-Carro c2 = c1;
-c2.setModelo("Palio");
-System.out.println(c1.getModelo());
-System.out.println(c2.getModelo());
-a) Qual o modelo de c1 e de c2?
-Uno e Palio, respectivamente.
-b) Comente explicando: por que alterar c2(c9) mudou c1(c8)? O que c1 e c2 compartilham?
-Porque c9 RECEBEU os dados de c8. Todos os atributos.
-c) Comente explicando: qual a diferença entre o comportamento do exercício 11 (int) e
-deste exercício (Carro)? Use os termos stack e heap na explicação.
-Resposta: No primeiro código, a e b são valores distintos, do tipo primitivo,
-armazenados na stack. Já no segundo, c8 e c9 são apenas dois nomes diferentes para o
-nesmíssimo objeto. É por isso que, ao alterar o modelo via c9, o c8 também sofre
-a alteração: eles estão olhando para a mesma vaga no estacionamento da memória(heap).
+/*Exercício 13 – Passagem de objeto para método
+Crie o código abaixo e execute:
+public static void main(String[] args) {
+Carro meuCarro = new Carro("VW", "Gol", 2015);
+trocarModelo(meuCarro);
+System.out.println(meuCarro.getModelo());
+}
+public static void trocarModelo(Carro c) {
+c.setModelo("Fusca");
+}
+a) O que é impresso?
+Resposta: É impresso 'Fusca'.
+b) Comente explicando: por que a mudança feita dentro do método trocarModelo afetou o
+objeto original? O parâmetro c aponta para onde?
+Resposta: Afetou o objeto original porque objeto c aponta o modelo, c.setModelo().
 */
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +42,6 @@ public class Main {
         Carro c9 = c8;
         c9.setModelo("Palio");
         System.out.println(c8.getModelo());
-        listaDeCarros.add(c8);
         System.out.println(c9.getModelo());
         listaDeCarros.add(c9);
 
@@ -61,6 +58,11 @@ public class Main {
         c2.setAno(2023);
         c2.getIdadeDoCarro();
         listaDeCarros.add(c2);
+
+        Carro c10 = new Carro("VW", "Gol", 2015);
+        Carro.trocarModelo(c10);
+        System.out.println(c10.getModelo());
+
 
         /*Relaciona-se com o construtor parametrizado. Aqui os atributos são passados de forma
         parametrizada.*/

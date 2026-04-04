@@ -16,6 +16,10 @@ public class Carro {
         System.out.println("Total de carros:" + Carro.totalCarros);
     }
 
+    public static void trocarModelo(Carro c) {
+        c.setModelo("Fusca");
+    }
+
     static int totalCarros = 0;/*contador.
     Resposta ex. 7d.
     Este é um atributo de classe(estático). Perceba que ele pertence apenas à classe
