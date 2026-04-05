@@ -123,5 +123,25 @@ public class Main {
         c2.exibir();
         c2.idadeDoCarro();*/
 
-    }
-}
+
+
+                ArrayList<Cliente> listaDeClientes = new ArrayList<>();
+
+                listaDeClientes.add(new Cliente("Fernando", "fernando23@gmail.com", "999999"));
+                listaDeClientes.add(new Cliente("Sarah", "saraoliveira@gmail.com"));
+                listaDeClientes.add(new Cliente("Carlos"));
+
+                System.out.println("---------LISTA DE CLIENTES---------");
+
+                for (Cliente cliente : listaDeClientes) {
+                    cliente.exibirDados();
+                }
+
+                System.out.println("Total de Clientes: " + Cliente.totalClientes);
+
+            }
+
+        }
+
+
+
