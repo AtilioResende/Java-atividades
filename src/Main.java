@@ -1,26 +1,85 @@
-/*Exercício 13 – Passagem de objeto para método
-Crie o código abaixo e execute:
-public static void main(String[] args) {
-Carro meuCarro = new Carro("VW", "Gol", 2015);
-trocarModelo(meuCarro);
-System.out.println(meuCarro.getModelo());
-}
-public static void trocarModelo(Carro c) {
-c.setModelo("Fusca");
-}
-a) O que é impresso?
-Resposta: É impresso 'Fusca'.
-b) Comente explicando: por que a mudança feita dentro do método trocarModelo afetou o
-objeto original? O parâmetro c aponta para onde?
-Resposta: Afetou o objeto original porque objeto c aponta o modelo, c.setModelo().
+/*Exercício 15 – Mini-sistema integrando tudo
+Crie um programa console (Scanner + menu) com as opções:
+1) Cadastrar Carro | 2) Listar todos | 3) Total cadastrado | 4) Sair
+Requisitos:
+a) Use ArrayList<Carro> para armazenar.
+b) Atributos private, com getters/setters e validação.
+c) Use construtor para criar os objetos.
+d) Opção 3 usa Carro.totalCarros (static).
+e) Validação de ano usa a constante final
 */
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        int x = 0;
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Carro> listaDeCarros = new ArrayList<>();
+        boolean controle = true;
+
+        System.out.println("========================");
+        System.out.println("Seja bem-vindo à Garagem");
+        System.out.println("========================");
+        do {
+            System.out.println("Escolha um dos números");
+            System.out.println("1 - Cadastrar carro");
+            System.out.println("2 - Listar todos os carros cadastrados");
+            System.out.println("3 - Total cadastrado");
+            System.out.println("4 - Sair");
+            System.out.println("========================");
+            int escolha = sc.nextInt();
+            sc.nextLine();
+
+            if (escolha == 1) {
+                cadastrarCarro(sc, listaDeCarros);
+
+            } else if (escolha == 2) {
+                exibirLista(listaDeCarros);
+
+            } else if (escolha == 3) {
+                System.out.println("Total de carros: " + Carro.totalCarros);
+
+            } else if (escolha == 4) {
+                System.out.println("Fechando o sistema...");
+                controle = false;
+            }
+
+        } while (controle);
+
+        sc.close();
+    }
+
+    private static void cadastrarCarro(Scanner sc, List<Carro> listaDeCarros) {
+        System.out.println("Digite a marca do carro:");
+        String marca = sc.nextLine();
+
+        System.out.println("Qual é o modelo do carro?");
+        String modelo = sc.nextLine();
+
+        System.out.println("Qual é o ano do carro? ");
+        int ano = sc.nextInt();
+        sc.nextLine();
+
+        Carro novoCarro = new Carro(marca, modelo, ano);
+
+        listaDeCarros.add(novoCarro);
+        System.out.println("Carro cadastrado com sucesso!");
+    }
+
+    private static void exibirLista(List<Carro> listaDeCarros) {
+        System.out.println("------------LISTA DE CARROS------------");
+        if (listaDeCarros.isEmpty()) {
+            System.out.println("Nenhum carro cadastrado.");
+        } else {
+            for (Carro c : listaDeCarros) {
+                c.exibirLista();
+            }
+        }
+    }
+}
+        /*int x = 0;
         if (true) {
             x = 10;
         }
@@ -36,7 +95,7 @@ public class Main {
         seja mudado posteriormente, como neste caso.
          */
 
-        ArrayList<Carro> listaDeCarros = new ArrayList<>();
+        /*ArrayList<Carro> listaDeCarros = new ArrayList<>();
 
         Carro c8 = new Carro("Fiat", "Uno", 2020);
         Carro c9 = c8;
@@ -66,7 +125,7 @@ public class Main {
 
         /*Relaciona-se com o construtor parametrizado. Aqui os atributos são passados de forma
         parametrizada.*/
-        Carro c3 = new Carro("Fiat", "Uno", 2013);
+        /*Carro c3 = new Carro("Fiat", "Uno", 2013);
         listaDeCarros.add(c3);
         /*Resposta 5c: VANTAGENS do construtor parametrizado:
         -Atomicidade: O objeto já nasce em um estado válido e completo.
@@ -84,8 +143,8 @@ public class Main {
         o ano, causando erros nos cálculos de idade depois.*/
 
         //Construtor sem parâmetros, conforme pedido no exercício 6c.
-        Carro c4 = new Carro();
-        listaDeCarros.add(c4);
+       /* Carro c4 = new Carro();
+       /* listaDeCarros.add(c4);
         /*Resposta ex. 6c: No construtor parametrizado (ex: c3), os dados vêm de fora
         (argumentos da Main). No construtor sem parâmetros (ex: c4),
         os dados são definidos internamente pela própria classe (valores "default").
@@ -93,7 +152,7 @@ public class Main {
         garantindo que o objeto não tenha valores nulos indesejados.*/
 
 
-        listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
+       /* listaDeCarros.add(new Carro("Chevrolet", "Tracker", 2019));
         listaDeCarros.add(new Carro("Ford", "Ranger", 2022));
         listaDeCarros.add(new Carro("Toyota", "Corolla", 2025));
 
@@ -125,7 +184,7 @@ public class Main {
 
 
 
-                ArrayList<Cliente> listaDeClientes = new ArrayList<>();
+             /*   ArrayList<Cliente> listaDeClientes = new ArrayList<>();
 
                 listaDeClientes.add(new Cliente("Fernando", "fernando23@gmail.com", "999999"));
                 listaDeClientes.add(new Cliente("Sarah", "saraoliveira@gmail.com"));
@@ -141,7 +200,7 @@ public class Main {
 
             }
 
-        }
+        }*/
 
 
 

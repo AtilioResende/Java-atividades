@@ -1,14 +1,12 @@
-/*Exercício 12 – Referência vs valor (objeto)
-Execute o código abaixo:
-Carro c1 = new Carro("Fiat", "Uno", 2020);
-Carro c2 = c1;
-c2.setModelo("Palio");
-System.out.println(c1.getModelo());
-System.out.println(c2.getModelo());
-a) Qual o modelo de c1 e de c2?
-b) Comente explicando: por que alterar c2 mudou c1? O que c1 e c2 compartilham?
-c) Comente explicando: qual a diferença entre o comportamento do exercício 11 (int) e
-deste exercício (Carro)? Use os termos stack e heap na explicação.*/
+/*Exercício 15 – Mini-sistema integrando tudo
+Crie um programa console (Scanner + menu) com as opções:
+1) Cadastrar Carro | 2) Listar todos | 3) Total cadastrado | 4) Sair
+Requisitos:
+a) Use ArrayList<Carro> para armazenar.
+b) Atributos private, com getters/setters e validação.
+c) Use construtor para criar os objetos.
+d) Opção 3 usa Carro.totalCarros (static).
+e) Validação de ano usa a constante final*/
 public class Carro {
 
     public static final int ANO_PRIMEIRO_CARRO = 1886;
@@ -27,7 +25,7 @@ public class Carro {
     dos atributos de instância, como marca, modelo e ano. Por isso, ele deve ser aces
     sado por meio do nome da Classe: Carro.totalCarros.*/
 
-    public void exibir(){ //Método que imprime marca, modelo e ano formatados.
+    public void exibirLista(){ //Método que imprime marca, modelo e ano formatados.
         System.out.format("Marca: %s | Modelo: %s | Ano: %d | Idade: %d", this.marca, this.modelo, this.ano, this.getIdadeDoCarro());
         System.out.println();
     }

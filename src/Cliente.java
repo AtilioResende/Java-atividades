@@ -1,11 +1,14 @@
-/*Exercício 14 – Sobrecarga de construtor completa
-Crie uma classe Cliente com atributos private: nome, email, telefone.
-a) Construtor 1: recebe nome, email e telefone.
-b) Construtor 2: recebe só nome e email. Telefone fica "Não informado".
-c) Construtor 3: recebe só nome. Email e telefone ficam "Não informado".
-d) Adicione static int totalClientes e incremente nos construtores.
-e) Na Main, crie um objeto com cada construtor e imprima os dados dos três.*/
+/*Exercício 15 – Mini-sistema integrando tudo
+Crie um programa console (Scanner + menu) com as opções:
+1) Cadastrar Carro | 2) Listar todos | 3) Total cadastrado | 4) Sair
+Requisitos:
+a) Use ArrayList<Carro> para armazenar.
+b) Atributos private, com getters/setters e validação.
+c) Use construtor para criar os objetos.
+d) Opção 3 usa Carro.totalCarros (static).
+e) Validação de ano usa a constante final*/
 
+import java.util.Scanner;
 public class Cliente {
 
     static int totalClientes = 0;
